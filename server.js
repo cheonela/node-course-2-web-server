@@ -6,6 +6,11 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+//It is used to get the port that we set in teh evnirnoment variable (if we don't deploy, just using local host,
+// then the port will be 3000)
+const port = process.env.PORT || 3000;
+
+
 var app = express();
 
 
@@ -92,6 +97,6 @@ app.get('/about2', (req, res) => {        // This function is taking 2 arguments
 
 
 // It is used to bind the applicatiion to the port
-app.listen(3000, () => {
-  console.log('Server is up running on port 3000');
+app.listen(port, () => {
+  console.log(`Server is up running on port ${port}`);
 });
