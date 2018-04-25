@@ -67,7 +67,12 @@ app.get('/', (req, res) => {
   });
 });
 
-
+app.get('/project', (req, res) => {
+  res.render('project.hbs', {
+    welcomeMessage: 'Welcome to my project',
+    pageTitle: 'My Project',
+  });
+});
 
 
 // in order to make a static page, we can use this, so no need to use the app.get(like below)
